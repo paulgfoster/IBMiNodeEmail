@@ -80,8 +80,8 @@ if (typeof content.attachments != 'undefined') {
 var mailOptions = {
 	from: credentials.from,
 	to:  emailto,
-	cc:  emailbcc,
-	bcc: emailcc,
+	cc:  emailcc,
+	bcc: emailbcc,
 	subject: emailsubject,
 	html: emailbody,
 	attachments: emailattach
@@ -124,7 +124,7 @@ transporter.sendMail(mailOptions, function(error, info){
 	  rtn = datestring + ' - ' + 'Error: ' + error + '\n';
 	} else {
 		//console.log('Email sent: ' + info.response);
-		rtn = datestring + ' - ' + 'to: ' + emailto;
+		rtn = datestring + ' - ' + 'to: ' + emailto + ',  cc: ' + emailcc + ',  bcc: ' + emailbcc;
 		if (typeof emailsubject != 'undefined') {
 			rtn += ', subject: ' + emailsubject;
 		}  		  

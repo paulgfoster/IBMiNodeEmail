@@ -89,11 +89,11 @@ var day = date.getDate().toString();
 (day.length == 1) && (day = '0' + day);	 
 (month.length == 1) && (month = '0' + month); 
 var ymd = year + month + day;
-var filename = '/home/tempfile/email_' + ymd + '.log';
+var filename = '/home/tempfile/email_' + ymd + '.txt';
 
 transporter.sendMail(mailOptions, function(error, info){
 	if (error) {
-	  //console.log(error);
+	  console.log(error);
 	  rtn = datestring + ' - ' + 'Error: ' + error + '\n';
 	} else {
 		//console.log('Email sent: ' + info.response);
